@@ -7,6 +7,7 @@
 #include <basics/vsync.h>
 
 #include "var.h"
+#include "rng.h"
 
 extern void update_timer(void);
 extern void reset_timer(void);

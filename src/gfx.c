@@ -14,6 +14,7 @@ void update_gfx(void) {
 			bg_map_32(bg0_1, bg0_1Len / 4, 30);
 		}
 	}
+	
 	if((g_relativeFrames == 29) || (g_relativeFrames == 59)) {
 		if(spriteFrame == 1) {
 			spriteFrame = 2;
@@ -27,6 +28,12 @@ void update_gfx(void) {
 	//Move
 	g_player->attr0 = attr0_build(attr0_Y(g_playerY), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_square);
 	g_player->attr1 = attr1_regular_build(attr1_X(g_playerX), g_playerFlipH, g_playerFlipV, attr1_size(OBJ_16x16));
+	
+	g_island->attr0 = attr0_build(attr0_Y(g_islandYS), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_square);
+	g_island->attr1 = attr1_regular_build(attr1_X(g_islandXS), 0, 0, attr1_size(OBJ_32x32));
+	
+	IO_BG0HOFS = IO_BG1HOFS = g_screenX;
+	IO_BG0VOFS = IO_BG1VOFS = g_screenY;
 }
 
 void load_gfx(void) {
@@ -39,6 +46,9 @@ void load_gfx(void) {
 	
 	obj_palette_32(playerPal, playerPalLen / 4, 0);
 	obj_tiles_32(playerTiles, playerTilesLen / 4, 4, 0, 4);
+	
+	obj_palette_32(islandPal, islandPalLen / 4, 1);
+	obj_tiles_32(islandTiles, islandTilesLen / 4, 4, 16, 4);
 }
 
 void load_gfx_IO(void) {
@@ -48,6 +58,10 @@ void load_gfx_IO(void) {
 	g_player->attr0 = attr0_build(attr0_Y(g_playerY), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_square);
 	g_player->attr1 = attr1_regular_build(attr1_X(g_playerX), g_playerFlipH, g_playerFlipV, attr1_size(OBJ_16x16));
 	g_player->attr2 = attr2_build(attr2_base_tile(g_playerAnimState), attr2_priority(0), attr2_palbank(0));
+	
+	g_island->attr0 = attr0_build(attr0_Y(g_islandYS), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_square);
+	g_island->attr1 = attr1_regular_build(attr1_X(g_islandXS), 0, 0, attr1_size(OBJ_32x32));
+	g_island->attr2 = attr2_build(attr2_base_tile(16), attr2_priority(0), attr2_palbank(1));
 	
 	IO_DISPCNT = dispcnt_mode(0) | dispcnt_BG0 | dispcnt_BG1 | dispcnt_OBJ | dispcnt_obj_mapping_1D;
 }

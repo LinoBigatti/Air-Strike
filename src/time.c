@@ -7,6 +7,10 @@ void update_timer(void) {
 	
 	g_absoluteFrames++;
 	g_relativeFrames++;
+	
+	random_set_seed(g_absoluteFrames);
+	random();
+	
 	if(g_relativeFrames == 60) {
 		g_relativeFrames = 0;
 		g_seconds++;
