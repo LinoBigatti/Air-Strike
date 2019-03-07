@@ -14,8 +14,8 @@ void handle_input(void) {
 			if(g_playerX == 120 && g_screenX != (256 - 240)) {
 				g_playerX -= 1;
 				g_screenX += 1;
-				g_islandXS -= 1;
-				g_islandXE -= 1;
+				g_islandXS_p -= 1;
+				g_islandXE_p -= 1;
 			}
 		}
 		if((g_playerRadarX != 208) && g_playerState == 1) {
@@ -23,8 +23,8 @@ void handle_input(void) {
 			if(g_playerRadarX == 120 && g_radarScreenX != (256 - 240)) {
 				g_playerRadarX -= 1;
 				g_radarScreenX += 1;
-				g_islandXS -= 1;
-				g_islandXE -= 1;
+				g_islandXS_r -= 1;
+				g_islandXE_r -= 1;
 			}
 		}
 		g_playerAnimState = 8;
@@ -36,8 +36,8 @@ void handle_input(void) {
 			if(g_playerX == 112 && g_screenX != 0) {
 				g_playerX += 1;
 				g_screenX -= 1;
-				g_islandXS += 1;
-				g_islandXE += 1;
+				g_islandXS_p += 1;
+				g_islandXE_p += 1;
 			}
 		}
 		if((g_playerRadarX != 0) && g_playerState == 1) {
@@ -45,8 +45,8 @@ void handle_input(void) {
 			if(g_playerRadarX == 112 && g_radarScreenX != 0) {
 				g_playerRadarX += 1;
 				g_radarScreenX -= 1;
-				g_islandXS += 1;
-				g_islandXE += 1;
+				g_islandXS_r += 1;
+				g_islandXE_r += 1;
 			}
 		}
 		g_playerAnimState = 8;
@@ -58,8 +58,8 @@ void handle_input(void) {
 			if(g_playerY == 62 && g_screenY != 0) {
 				g_playerY += 1;
 				g_screenY -= 1;
-				g_islandYS += 1;
-				g_islandYE += 1;
+				g_islandYS_p += 1;
+				g_islandYE_p += 1;
 			}
 		}
 		if((g_playerRadarY != 0) && g_playerState == 1) {
@@ -67,8 +67,8 @@ void handle_input(void) {
 			if(g_playerRadarY == 62 && g_radarScreenY != 0) {
 				g_playerRadarY += 1;
 				g_radarScreenY -= 1;
-				g_islandYS += 1;
-				g_islandYE += 1;
+				g_islandYS_r += 1;
+				g_islandYE_r += 1;
 			}
 		}
 		g_playerAnimState = 0;
@@ -80,8 +80,8 @@ void handle_input(void) {
 			if(g_playerY == 80 && g_screenY != (256 - 160)) {
 				g_playerY -= 1;
 				g_screenY += 1;
-				g_islandYS -= 1;
-				g_islandYE -= 1;
+				g_islandYS_p -= 1;
+				g_islandYE_p -= 1;
 			}
 		}
 		if((g_playerRadarY != 128) && g_playerState == 1) {
@@ -89,8 +89,8 @@ void handle_input(void) {
 			if(g_playerRadarY == 80 && g_radarScreenY != (256 - 160)) {
 				g_playerRadarY -= 1;
 				g_radarScreenY += 1;
-				g_islandYS -= 1;
-				g_islandYE -= 1;
+				g_islandYS_r -= 1;
+				g_islandYE_r -= 1;
 			}
 		}
 		g_playerAnimState = 0;
@@ -98,10 +98,12 @@ void handle_input(void) {
 		g_playerFlipV = attr1_vflip;
 	}
 	if(key_start_pressing(BUTTON_A)) {
-		if((g_playerX >= g_islandXS && g_playerX <= g_islandXE) && (g_playerY >= g_islandYS && g_playerY <= g_islandYE)) {
-			g_island->attr0 = attr0_build(attr0_Y(g_islandYS), attr0_hide, attr0_normal, 0, attr0_4bpp, attr0_square);
-			IO_DISPCNT = 0;
-			while(1);
+		if(g_playerState == 0) {
+			if((g_playerX >= g_islandXS_p && g_playerX <= g_islandXE_p) && (g_playerY >= g_islandYS_p && g_playerY <= g_islandYE_p)) {
+				g_island->attr0 = attr0_build(attr0_Y(g_islandYS_p), attr0_hide, attr0_normal, 0, attr0_4bpp, attr0_square);
+				IO_DISPCNT = 0;
+				while(1);
+			}
 		}
 	}
 }

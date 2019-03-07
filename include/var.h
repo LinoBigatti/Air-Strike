@@ -29,10 +29,14 @@ extern u32 g_playerRadarY;
 extern u32 g_playerVisibility;
 
 //Island variables
-extern u32 g_islandXS;
-extern u32 g_islandYS;
-extern u32 g_islandXE;
-extern u32 g_islandYE;
+extern u32 g_islandXS_p;
+extern u32 g_islandYS_p;
+extern u32 g_islandXE_p;
+extern u32 g_islandYE_p;
+extern u32 g_islandXS_r;
+extern u32 g_islandYS_r;
+extern u32 g_islandXE_r;
+extern u32 g_islandYE_r;
 extern u32 g_islandVisibility;
 
 //Bg variables

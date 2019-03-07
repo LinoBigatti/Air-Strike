@@ -23,10 +23,14 @@ u32 g_playerRadarY = 0;
 u32 g_playerVisibility = 0;
 
 //Island variables
-u32 g_islandXS = 0;
-u32 g_islandYS = 0;
-u32 g_islandXE = 0;
-u32 g_islandYE = 0;
+u32 g_islandXS_p = 0;
+u32 g_islandYS_p = 0;
+u32 g_islandXE_p = 0;
+u32 g_islandYE_p = 0;
+u32 g_islandXS_r = 0;
+u32 g_islandYS_r = 0;
+u32 g_islandXE_r = 0;
+u32 g_islandYE_r = 0;
 u32 g_islandVisibility = attr0_hide;
 
 //Bg variables
