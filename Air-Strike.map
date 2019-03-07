@@ -2,7 +2,7 @@ Archive member included to satisfy reference by file (symbol)
 
 .\libAPIagb.a(bg_map_32.c.o)  build/gfx.c.o (bg_map_32)
 .\libAPIagb.a(bg_palette_32.c.o)
-                              build/gfx.c.o (bg_palette_32)
+                              build/control.c.o (bg_palette_32)
 .\libAPIagb.a(bg_tileset_32.c.o)
                               build/gfx.c.o (bg_tileset_32)
 .\libAPIagb.a(vsync.c.o)      build/time.c.o (Vsync)
@@ -121,138 +121,139 @@ Linker script and memory map
  *(.plt)
                 0x0800021c                . = ALIGN (0x4)
 
-.text           0x0800021c      0xb3c
+.text           0x0800021c      0xb68
  *(EXCLUDE_FILE(*.iwram*) .text)
  .text          0x0800021c       0xd4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtbegin.o
- .text          0x080002f0      0x328 build/control.c.o
+ .text          0x080002f0      0x354 build/control.c.o
                 0x080002f0                handle_input
- .text          0x08000618      0x33c build/gfx.c.o
-                0x08000618                update_gfx
-                0x080007fc                load_gfx
-                0x08000890                load_gfx_IO
- .text          0x08000954       0x80 build/rng.c.o
-                0x08000954                random_set_seed
-                0x08000960                random
-                0x08000994                random_range
- .text          0x080009d4      0x110 build/time.c.o
-                0x080009d4                update_timer
-                0x08000a58                reset_timer
-                0x08000a84                hard_reset_timer
-                0x08000ab8                delay
- .text          0x08000ae4       0x24 .\libAPIagb.a(bg_map_32.c.o)
-                0x08000ae4                bg_map_32
- .text          0x08000b08       0x30 .\libAPIagb.a(bg_palette_32.c.o)
-                0x08000b08                bg_palette_32
- .text          0x08000b38       0x24 .\libAPIagb.a(bg_tileset_32.c.o)
-                0x08000b38                bg_tileset_32
- .text          0x08000b5c       0x18 .\libAPIagb.a(vsync.c.o)
-                0x08000b5c                Vsync
- .text          0x08000b74       0x20 .\libAPIagb.a(obj_clear_all.c.o)
-                0x08000b74                obj_clear_all
- .text          0x08000b94       0x30 .\libAPIagb.a(obj_palette_32.c.o)
-                0x08000b94                obj_palette_32
- .text          0x08000bc4       0x3c .\libAPIagb.a(obj_tiles_32.c.o)
-                0x08000bc4                obj_tiles_32
- .text          0x08000c00       0x60 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb\libgcc.a(_muldi3.o)
-                0x08000c00                __muldi3
-                0x08000c00                __aeabi_lmul
+ .text          0x08000644      0x33c build/gfx.c.o
+                0x08000644                update_gfx
+                0x08000828                load_gfx
+                0x080008bc                load_gfx_IO
+ .text          0x08000980       0x80 build/rng.c.o
+                0x08000980                random_set_seed
+                0x0800098c                random
+                0x080009c0                random_range
+ .text          0x08000a00      0x110 build/time.c.o
+                0x08000a00                update_timer
+                0x08000a84                reset_timer
+                0x08000ab0                hard_reset_timer
+                0x08000ae4                delay
+ .text          0x08000b10       0x24 .\libAPIagb.a(bg_map_32.c.o)
+                0x08000b10                bg_map_32
+ .text          0x08000b34       0x30 .\libAPIagb.a(bg_palette_32.c.o)
+                0x08000b34                bg_palette_32
+ .text          0x08000b64       0x24 .\libAPIagb.a(bg_tileset_32.c.o)
+                0x08000b64                bg_tileset_32
+ .text          0x08000b88       0x18 .\libAPIagb.a(vsync.c.o)
+                0x08000b88                Vsync
+ .text          0x08000ba0       0x20 .\libAPIagb.a(obj_clear_all.c.o)
+                0x08000ba0                obj_clear_all
+ .text          0x08000bc0       0x30 .\libAPIagb.a(obj_palette_32.c.o)
+                0x08000bc0                obj_palette_32
+ .text          0x08000bf0       0x3c .\libAPIagb.a(obj_tiles_32.c.o)
+                0x08000bf0                obj_tiles_32
+ .text          0x08000c2c       0x60 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb\libgcc.a(_muldi3.o)
+                0x08000c2c                __muldi3
+                0x08000c2c                __aeabi_lmul
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text.startup  0x08000c60       0xa0 build/main.c.o
-                0x08000c60                main
+ .text.startup  0x08000c8c       0xa0 build/main.c.o
+                0x08000c8c                main
  .text.__libc_init_array
-                0x08000d00       0x58 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/../../../../arm-none-eabi/lib/thumb\libg.a(lib_a-init.o)
-                0x08000d00                __libc_init_array
+                0x08000d2c       0x58 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/../../../../arm-none-eabi/lib/thumb\libg.a(lib_a-init.o)
+                0x08000d2c                __libc_init_array
  *(.text.*personality*)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x08000d58        0x0 linker stubs
+ .glue_7t       0x08000d84        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x08000d58        0x0 linker stubs
+ .glue_7        0x08000d84        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x08000d58        0x0 linker stubs
-                0x08000d58                . = ALIGN (0x4)
-                0x08000d58                __text_end = .
+ .vfp11_veneer  0x08000d84        0x0 linker stubs
+                0x08000d84                . = ALIGN (0x4)
+                0x08000d84                __text_end = .
 
-.v4_bx          0x08000d58        0x0
- .v4_bx         0x08000d58        0x0 linker stubs
+.v4_bx          0x08000d84        0x0
+ .v4_bx         0x08000d84        0x0 linker stubs
 
-.iplt           0x08000d58        0x0
- .iplt          0x08000d58        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/../../../../arm-none-eabi/lib/thumb/gba_crt0.o
+.iplt           0x08000d84        0x0
+ .iplt          0x08000d84        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/../../../../arm-none-eabi/lib/thumb/gba_crt0.o
 
-.fini           0x08000d58        0xc
+.fini           0x08000d84        0xc
  *(.fini)
- .fini          0x08000d58        0x4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crti.o
-                0x08000d58                _fini
- .fini          0x08000d5c        0x8 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtn.o
-                0x08000d64                . = ALIGN (0x4)
+ .fini          0x08000d84        0x4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crti.o
+                0x08000d84                _fini
+ .fini          0x08000d88        0x8 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtn.o
+                0x08000d90                . = ALIGN (0x4)
 
-.rodata         0x08000d64     0x2640
+.rodata         0x08000d90     0x2840
  *(.rodata)
- .rodata        0x08000d64      0xa00 build/bg-tiles.c.o
-                0x08000d64                bgPal
-                0x08000f64                bgTiles
- .rodata        0x08001764      0x800 build/BG0_1.c.o
-                0x08001764                bg0_1
- .rodata        0x08001f64      0x800 build/BG0_2.c.o
-                0x08001f64                bg0_2
- .rodata        0x08002764      0x800 build/BG1.c.o
-                0x08002764                bg1
- .rodata        0x08002f64      0x220 build/island.c.o
-                0x08002f64                islandPal
-                0x08002f84                islandTiles
- .rodata        0x08003184      0x220 build/player.c.o
-                0x08003184                playerPal
-                0x080031a4                playerTiles
+ .rodata        0x08000d90      0xc00 build/bg-tiles.c.o
+                0x08000d90                bgPal2
+                0x08000f90                bgPal1
+                0x08001190                bgTiles
+ .rodata        0x08001990      0x800 build/BG0_1.c.o
+                0x08001990                bg0_1
+ .rodata        0x08002190      0x800 build/BG0_2.c.o
+                0x08002190                bg0_2
+ .rodata        0x08002990      0x800 build/BG1.c.o
+                0x08002990                bg1
+ .rodata        0x08003190      0x220 build/island.c.o
+                0x08003190                islandPal
+                0x080031b0                islandTiles
+ .rodata        0x080033b0      0x220 build/player.c.o
+                0x080033b0                playerPal
+                0x080033d0                playerTiles
  *all.rodata*(*)
  *(.roda)
  *(.rodata.*)
  *(.gnu.linkonce.r*)
-                0x080033a4                . = ALIGN (0x4)
+                0x080035d0                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080033a4                __exidx_start = .
+                0x080035d0                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x080033a4                __exidx_end = .
+                0x080035d0                __exidx_end = .
 
-.ctors          0x080033a4        0x0
+.ctors          0x080035d0        0x0
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x080033a4                . = ALIGN (0x4)
+                0x080035d0                . = ALIGN (0x4)
 
-.dtors          0x080033a4        0x0
+.dtors          0x080035d0        0x0
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x080033a4                . = ALIGN (0x4)
+                0x080035d0                . = ALIGN (0x4)
 
-.eh_frame       0x080033a4        0x4
+.eh_frame       0x080035d0        0x4
  *(.eh_frame)
- .eh_frame      0x080033a4        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtbegin.o
- .eh_frame      0x080033a4        0x4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtend.o
-                0x080033a8                . = ALIGN (0x4)
+ .eh_frame      0x080035d0        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtbegin.o
+ .eh_frame      0x080035d0        0x4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtend.o
+                0x080035d4                . = ALIGN (0x4)
 
-.rel.dyn        0x080033a8        0x0
- .rel.iplt      0x080033a8        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/../../../../arm-none-eabi/lib/thumb/gba_crt0.o
+.rel.dyn        0x080035d4        0x0
+ .rel.iplt      0x080035d4        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/../../../../arm-none-eabi/lib/thumb/gba_crt0.o
 
 .gcc_except_table
-                0x080033a8        0x0
+                0x080035d4        0x0
  *(.gcc_except_table)
-                0x080033a8                . = ALIGN (0x4)
-                0x080033a8                __iwram_lma = .
+                0x080035d4                . = ALIGN (0x4)
+                0x080035d4                __iwram_lma = .
 
-.iwram          0x03000000        0x0 load address 0x080033a8
+.iwram          0x03000000        0x0 load address 0x080035d4
                 0x03000000                __iwram_start__ = ABSOLUTE (.)
  *(.iwram)
  *iwram.*(.text)
                 0x03000000                . = ALIGN (0x4)
                 0x03000000                __iwram_end__ = ABSOLUTE (.)
-                0x080033a8                __data_lma = (__iwram_lma + SIZEOF (.iwram))
+                0x080035d4                __data_lma = (__iwram_lma + SIZEOF (.iwram))
 
 .bss            0x03000000       0x9c
                 0x03000000                __bss_start = ABSOLUTE (.)
@@ -299,7 +300,7 @@ Linker script and memory map
                 0x0300009c                . = ALIGN (0x4)
                 0x0300009c                __bss_end__ = ABSOLUTE (.)
 
-.data           0x0300009c       0x24 load address 0x080033a8
+.data           0x0300009c       0x24 load address 0x080035d4
                 0x0300009c                __data_start__ = ABSOLUTE (.)
  *(.data)
  .data          0x0300009c        0x8 build/gfx.c.o
@@ -316,53 +317,53 @@ Linker script and memory map
  *(.data.*)
  *(.gnu.linkonce.d*)
                 0x030000c0                . = ALIGN (0x4)
-                0x080033cc                __preinit_lma = (__data_lma + SIZEOF (.data))
+                0x080035f8                __preinit_lma = (__data_lma + SIZEOF (.data))
 
-.igot.plt       0x030000c0        0x0 load address 0x080033cc
+.igot.plt       0x030000c0        0x0 load address 0x080035f8
  .igot.plt      0x030000c0        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/../../../../arm-none-eabi/lib/thumb/gba_crt0.o
 
 .tm_clone_table
-                0x030000c0        0x0 load address 0x080033cc
+                0x030000c0        0x0 load address 0x080035f8
  .tm_clone_table
                 0x030000c0        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtbegin.o
  .tm_clone_table
                 0x030000c0        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtend.o
 
-.preinit_array  0x030000c0        0x0 load address 0x080033cc
+.preinit_array  0x030000c0        0x0 load address 0x080035f8
                 0x030000c0                __preinit_array_start = ABSOLUTE (.)
  *(.preinit_array)
                 0x030000c0                __preinit_array_end = ABSOLUTE (.)
-                0x080033cc                __init_lma = (__preinit_lma + SIZEOF (.preinit_array))
+                0x080035f8                __init_lma = (__preinit_lma + SIZEOF (.preinit_array))
 
-.init_array     0x030000c0        0x4 load address 0x080033cc
+.init_array     0x030000c0        0x4 load address 0x080035f8
                 0x030000c0                __init_array_start = ABSOLUTE (.)
  *(SORT(.init_array.*))
  *(.init_array)
  .init_array    0x030000c0        0x4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtbegin.o
                 0x030000c4                __init_array_end = ABSOLUTE (.)
-                0x080033d0                __fini_lma = (__init_lma + SIZEOF (.init_array))
+                0x080035fc                __fini_lma = (__init_lma + SIZEOF (.init_array))
 
-.fini_array     0x030000c4        0x4 load address 0x080033d0
+.fini_array     0x030000c4        0x4 load address 0x080035fc
                 0x030000c4                __fini_array_start = ABSOLUTE (.)
  *(SORT(.fini_array.*))
  *(.fini_array)
  .fini_array    0x030000c4        0x4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtbegin.o
                 0x030000c8                __fini_array_end = ABSOLUTE (.)
-                0x080033d4                __jcr_lma = (__fini_lma + SIZEOF (.fini_array))
+                0x08003600                __jcr_lma = (__fini_lma + SIZEOF (.fini_array))
 
-.jcr            0x030000c8        0x4 load address 0x080033d4
+.jcr            0x030000c8        0x4 load address 0x08003600
  *(.jcr)
  .jcr           0x030000c8        0x0 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtbegin.o
  .jcr           0x030000c8        0x4 c:/devkitpro/devkitarm/bin/../lib/gcc/arm-none-eabi/5.3.0/thumb/crtend.o
                 0x030000cc                __data_end__ = ABSOLUTE (.)
-                0x080033d8                __iwram_overlay_lma = (__jcr_lma + SIZEOF (.jcr))
+                0x08003604                __iwram_overlay_lma = (__jcr_lma + SIZEOF (.jcr))
                 0x030000cc                __iwram_overlay_start = .
 
-.iwram0         0x030000cc        0x0 load address 0x080033d8
+.iwram0         0x030000cc        0x0 load address 0x08003604
  *(.iwram0)
                 0x030000cc                . = ALIGN (0x4)
-                0x080033d8                PROVIDE (__load_start_iwram0, LOADADDR (.iwram0))
-                0x080033d8                PROVIDE (__load_stop_iwram0, (LOADADDR (.iwram0) + SIZEOF (.iwram0)))
+                0x08003604                PROVIDE (__load_start_iwram0, LOADADDR (.iwram0))
+                0x08003604                PROVIDE (__load_stop_iwram0, (LOADADDR (.iwram0) + SIZEOF (.iwram0)))
 
 .iwram1         0x030000cc        0x0
  *(.iwram1)
@@ -418,15 +419,15 @@ Linker script and memory map
                 [!provide]                PROVIDE (__load_start_iwram9, LOADADDR (.iwram9))
                 [!provide]                PROVIDE (__load_stop_iwram9, (LOADADDR (.iwram9) + SIZEOF (.iwram9)))
                 0x030000cc                __iwram_overlay_end = .
-                0x080033d8                __ewram_lma = (__iwram_overlay_lma + (__iwram_overlay_end - __iwram_overlay_start))
+                0x08003604                __ewram_lma = (__iwram_overlay_lma + (__iwram_overlay_end - __iwram_overlay_start))
                 0x030000cc                __iheap_start = .
                 0x02000000                __ewram_start = ORIGIN (ewram)
 
-.ewram          0x02000000        0x0 load address 0x080033d8
+.ewram          0x02000000        0x0 load address 0x08003604
  *(.ewram)
                 0x02000000                . = ALIGN (0x4)
                 0x02000000                __ewram_end = ABSOLUTE (.)
-                0x080033d8                __pad_lma = (__ewram_lma + SIZEOF (.ewram))
+                0x08003604                __pad_lma = (__ewram_lma + SIZEOF (.ewram))
 
 .sbss           0x02000000        0x0
                 0x02000000                __sbss_start__ = ABSOLUTE (.)
@@ -436,11 +437,11 @@ Linker script and memory map
                 0x02000000                __end__ = ABSOLUTE (.)
                 0x02000000                __eheap_start = ABSOLUTE (.)
 
-.pad            0x02000000        0x8 load address 0x080033d8
+.pad            0x02000000        0x8 load address 0x08003604
                 0x02000000        0x4 LONG 0x52416b64
                 0x02000004        0x4 LONG 0x4d
                 0x02000008                . = ALIGN (0x4)
-                0x080033e0                __rom_end__ = (__pad_lma + SIZEOF (.pad))
+                0x0800360c                __rom_end__ = (__pad_lma + SIZEOF (.pad))
 
 .stab
  *(.stab)
@@ -547,74 +548,74 @@ Linker script and memory map
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1ee2
+.debug_info     0x00000000     0x1f59
  *(.debug_info)
- .debug_info    0x00000000       0x79 build/bg-tiles.c.o
- .debug_info    0x00000079       0x9d build/BG0_1.c.o
- .debug_info    0x00000116       0x9d build/BG0_2.c.o
- .debug_info    0x000001b3       0x9d build/BG1.c.o
- .debug_info    0x00000250      0x321 build/control.c.o
- .debug_info    0x00000571      0x812 build/gfx.c.o
- .debug_info    0x00000d83       0x78 build/island.c.o
- .debug_info    0x00000dfb      0x258 build/main.c.o
- .debug_info    0x00001053       0x78 build/player.c.o
- .debug_info    0x000010cb      0x13a build/rng.c.o
- .debug_info    0x00001205      0x189 build/time.c.o
- .debug_info    0x0000138e      0x2ce build/var.c.o
- .debug_info    0x0000165c      0x126 .\libAPIagb.a(bg_map_32.c.o)
- .debug_info    0x00001782       0xff .\libAPIagb.a(bg_palette_32.c.o)
- .debug_info    0x00001881      0x19a .\libAPIagb.a(bg_tileset_32.c.o)
- .debug_info    0x00001a1b       0x8d .\libAPIagb.a(vsync.c.o)
- .debug_info    0x00001aa8       0x91 .\libAPIagb.a(key_defs.c.o)
- .debug_info    0x00001b39      0x101 .\libAPIagb.a(obj_clear_all.c.o)
- .debug_info    0x00001c3a       0xff .\libAPIagb.a(obj_palette_32.c.o)
- .debug_info    0x00001d39      0x1a9 .\libAPIagb.a(obj_tiles_32.c.o)
+ .debug_info    0x00000000       0x8f build/bg-tiles.c.o
+ .debug_info    0x0000008f       0x9d build/BG0_1.c.o
+ .debug_info    0x0000012c       0x9d build/BG0_2.c.o
+ .debug_info    0x000001c9       0x9d build/BG1.c.o
+ .debug_info    0x00000266      0x382 build/control.c.o
+ .debug_info    0x000005e8      0x812 build/gfx.c.o
+ .debug_info    0x00000dfa       0x78 build/island.c.o
+ .debug_info    0x00000e72      0x258 build/main.c.o
+ .debug_info    0x000010ca       0x78 build/player.c.o
+ .debug_info    0x00001142      0x13a build/rng.c.o
+ .debug_info    0x0000127c      0x189 build/time.c.o
+ .debug_info    0x00001405      0x2ce build/var.c.o
+ .debug_info    0x000016d3      0x126 .\libAPIagb.a(bg_map_32.c.o)
+ .debug_info    0x000017f9       0xff .\libAPIagb.a(bg_palette_32.c.o)
+ .debug_info    0x000018f8      0x19a .\libAPIagb.a(bg_tileset_32.c.o)
+ .debug_info    0x00001a92       0x8d .\libAPIagb.a(vsync.c.o)
+ .debug_info    0x00001b1f       0x91 .\libAPIagb.a(key_defs.c.o)
+ .debug_info    0x00001bb0      0x101 .\libAPIagb.a(obj_clear_all.c.o)
+ .debug_info    0x00001cb1       0xff .\libAPIagb.a(obj_palette_32.c.o)
+ .debug_info    0x00001db0      0x1a9 .\libAPIagb.a(obj_tiles_32.c.o)
 
-.debug_abbrev   0x00000000      0xcc6
+.debug_abbrev   0x00000000      0xd25
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x4e build/bg-tiles.c.o
  .debug_abbrev  0x0000004e       0x5d build/BG0_1.c.o
  .debug_abbrev  0x000000ab       0x5d build/BG0_2.c.o
  .debug_abbrev  0x00000108       0x5d build/BG1.c.o
- .debug_abbrev  0x00000165      0x10b build/control.c.o
- .debug_abbrev  0x00000270      0x16c build/gfx.c.o
- .debug_abbrev  0x000003dc       0x45 build/island.c.o
- .debug_abbrev  0x00000421      0x132 build/main.c.o
- .debug_abbrev  0x00000553       0x45 build/player.c.o
- .debug_abbrev  0x00000598       0xdb build/rng.c.o
- .debug_abbrev  0x00000673       0xb4 build/time.c.o
- .debug_abbrev  0x00000727       0x85 build/var.c.o
- .debug_abbrev  0x000007ac       0xc9 .\libAPIagb.a(bg_map_32.c.o)
- .debug_abbrev  0x00000875       0x9b .\libAPIagb.a(bg_palette_32.c.o)
- .debug_abbrev  0x00000910       0xee .\libAPIagb.a(bg_tileset_32.c.o)
- .debug_abbrev  0x000009fe       0x56 .\libAPIagb.a(vsync.c.o)
- .debug_abbrev  0x00000a54       0x44 .\libAPIagb.a(key_defs.c.o)
- .debug_abbrev  0x00000a98       0xa5 .\libAPIagb.a(obj_clear_all.c.o)
- .debug_abbrev  0x00000b3d       0x9b .\libAPIagb.a(obj_palette_32.c.o)
- .debug_abbrev  0x00000bd8       0xee .\libAPIagb.a(obj_tiles_32.c.o)
+ .debug_abbrev  0x00000165      0x16a build/control.c.o
+ .debug_abbrev  0x000002cf      0x16c build/gfx.c.o
+ .debug_abbrev  0x0000043b       0x45 build/island.c.o
+ .debug_abbrev  0x00000480      0x132 build/main.c.o
+ .debug_abbrev  0x000005b2       0x45 build/player.c.o
+ .debug_abbrev  0x000005f7       0xdb build/rng.c.o
+ .debug_abbrev  0x000006d2       0xb4 build/time.c.o
+ .debug_abbrev  0x00000786       0x85 build/var.c.o
+ .debug_abbrev  0x0000080b       0xc9 .\libAPIagb.a(bg_map_32.c.o)
+ .debug_abbrev  0x000008d4       0x9b .\libAPIagb.a(bg_palette_32.c.o)
+ .debug_abbrev  0x0000096f       0xee .\libAPIagb.a(bg_tileset_32.c.o)
+ .debug_abbrev  0x00000a5d       0x56 .\libAPIagb.a(vsync.c.o)
+ .debug_abbrev  0x00000ab3       0x44 .\libAPIagb.a(key_defs.c.o)
+ .debug_abbrev  0x00000af7       0xa5 .\libAPIagb.a(obj_clear_all.c.o)
+ .debug_abbrev  0x00000b9c       0x9b .\libAPIagb.a(obj_palette_32.c.o)
+ .debug_abbrev  0x00000c37       0xee .\libAPIagb.a(obj_tiles_32.c.o)
 
-.debug_line     0x00000000      0xd22
+.debug_line     0x00000000      0xd6e
  *(.debug_line)
  .debug_line    0x00000000       0x2f build/bg-tiles.c.o
  .debug_line    0x0000002f       0x57 build/BG0_1.c.o
  .debug_line    0x00000086       0x57 build/BG0_2.c.o
  .debug_line    0x000000dd       0x55 build/BG1.c.o
- .debug_line    0x00000132      0x253 build/control.c.o
- .debug_line    0x00000385      0x246 build/gfx.c.o
- .debug_line    0x000005cb       0x2d build/island.c.o
- .debug_line    0x000005f8      0x12f build/main.c.o
- .debug_line    0x00000727       0x2d build/player.c.o
- .debug_line    0x00000754       0x70 build/rng.c.o
- .debug_line    0x000007c4       0xc0 build/time.c.o
- .debug_line    0x00000884       0x83 build/var.c.o
- .debug_line    0x00000907       0x9a .\libAPIagb.a(bg_map_32.c.o)
- .debug_line    0x000009a1       0x8e .\libAPIagb.a(bg_palette_32.c.o)
- .debug_line    0x00000a2f       0x85 .\libAPIagb.a(bg_tileset_32.c.o)
- .debug_line    0x00000ab4       0x6e .\libAPIagb.a(vsync.c.o)
- .debug_line    0x00000b22       0x55 .\libAPIagb.a(key_defs.c.o)
- .debug_line    0x00000b77       0x9c .\libAPIagb.a(obj_clear_all.c.o)
- .debug_line    0x00000c13       0x8b .\libAPIagb.a(obj_palette_32.c.o)
- .debug_line    0x00000c9e       0x84 .\libAPIagb.a(obj_tiles_32.c.o)
+ .debug_line    0x00000132      0x29f build/control.c.o
+ .debug_line    0x000003d1      0x246 build/gfx.c.o
+ .debug_line    0x00000617       0x2d build/island.c.o
+ .debug_line    0x00000644      0x12f build/main.c.o
+ .debug_line    0x00000773       0x2d build/player.c.o
+ .debug_line    0x000007a0       0x70 build/rng.c.o
+ .debug_line    0x00000810       0xc0 build/time.c.o
+ .debug_line    0x000008d0       0x83 build/var.c.o
+ .debug_line    0x00000953       0x9a .\libAPIagb.a(bg_map_32.c.o)
+ .debug_line    0x000009ed       0x8e .\libAPIagb.a(bg_palette_32.c.o)
+ .debug_line    0x00000a7b       0x85 .\libAPIagb.a(bg_tileset_32.c.o)
+ .debug_line    0x00000b00       0x6e .\libAPIagb.a(vsync.c.o)
+ .debug_line    0x00000b6e       0x55 .\libAPIagb.a(key_defs.c.o)
+ .debug_line    0x00000bc3       0x9c .\libAPIagb.a(obj_clear_all.c.o)
+ .debug_line    0x00000c5f       0x8b .\libAPIagb.a(obj_palette_32.c.o)
+ .debug_line    0x00000cea       0x84 .\libAPIagb.a(obj_tiles_32.c.o)
 
 .debug_frame    0x00000000      0x280
  *(.debug_frame)
@@ -631,46 +632,46 @@ Linker script and memory map
  .debug_frame   0x0000022c       0x2c .\libAPIagb.a(obj_palette_32.c.o)
  .debug_frame   0x00000258       0x28 .\libAPIagb.a(obj_tiles_32.c.o)
 
-.debug_str      0x00000000      0x786
+.debug_str      0x00000000      0x79c
  *(.debug_str)
- .debug_str     0x00000000       0xb6 build/bg-tiles.c.o
- .debug_str     0x000000b6       0x4f build/BG0_1.c.o
+ .debug_str     0x00000000       0xbe build/bg-tiles.c.o
+ .debug_str     0x000000be       0x5d build/BG0_1.c.o
                                 0x11c (size before relaxing)
- .debug_str     0x00000105       0x12 build/BG0_2.c.o
+ .debug_str     0x0000011b       0x12 build/BG0_2.c.o
                                 0x11c (size before relaxing)
- .debug_str     0x00000117        0xa build/BG1.c.o
+ .debug_str     0x0000012d        0xa build/BG1.c.o
                                 0x114 (size before relaxing)
- .debug_str     0x00000121      0x213 build/control.c.o
-                                0x31d (size before relaxing)
- .debug_str     0x00000334      0x213 build/gfx.c.o
-                                0x4c7 (size before relaxing)
- .debug_str     0x00000547        0xd build/island.c.o
+ .debug_str     0x00000137      0x221 build/control.c.o
+                                0x339 (size before relaxing)
+ .debug_str     0x00000358      0x205 build/gfx.c.o
+                                0x4c8 (size before relaxing)
+ .debug_str     0x0000055d        0xd build/island.c.o
                                  0xbc (size before relaxing)
- .debug_str     0x00000554       0x47 build/main.c.o
+ .debug_str     0x0000056a       0x47 build/main.c.o
                                 0x21a (size before relaxing)
- .debug_str     0x0000059b        0xd build/player.c.o
+ .debug_str     0x000005b1        0xd build/player.c.o
                                  0xbc (size before relaxing)
- .debug_str     0x000005a8       0x30 build/rng.c.o
+ .debug_str     0x000005be       0x30 build/rng.c.o
                                 0x14c (size before relaxing)
- .debug_str     0x000005d8       0x5c build/time.c.o
+ .debug_str     0x000005ee       0x5c build/time.c.o
                                 0x1b9 (size before relaxing)
- .debug_str     0x00000634        0xa build/var.c.o
+ .debug_str     0x0000064a        0xa build/var.c.o
                                 0x2b3 (size before relaxing)
- .debug_str     0x0000063e       0x51 .\libAPIagb.a(bg_map_32.c.o)
+ .debug_str     0x00000654       0x51 .\libAPIagb.a(bg_map_32.c.o)
                                 0x157 (size before relaxing)
- .debug_str     0x0000068f       0x22 .\libAPIagb.a(bg_palette_32.c.o)
+ .debug_str     0x000006a5       0x22 .\libAPIagb.a(bg_palette_32.c.o)
                                 0x14e (size before relaxing)
- .debug_str     0x000006b1       0x48 .\libAPIagb.a(bg_tileset_32.c.o)
+ .debug_str     0x000006c7       0x48 .\libAPIagb.a(bg_tileset_32.c.o)
                                 0x171 (size before relaxing)
- .debug_str     0x000006f9       0x16 .\libAPIagb.a(vsync.c.o)
+ .debug_str     0x0000070f       0x16 .\libAPIagb.a(vsync.c.o)
                                 0x122 (size before relaxing)
- .debug_str     0x0000070f       0x18 .\libAPIagb.a(key_defs.c.o)
+ .debug_str     0x00000725       0x18 .\libAPIagb.a(key_defs.c.o)
                                 0x132 (size before relaxing)
- .debug_str     0x00000727       0x23 .\libAPIagb.a(obj_clear_all.c.o)
+ .debug_str     0x0000073d       0x23 .\libAPIagb.a(obj_clear_all.c.o)
                                 0x15c (size before relaxing)
- .debug_str     0x0000074a       0x1f .\libAPIagb.a(obj_palette_32.c.o)
+ .debug_str     0x00000760       0x1f .\libAPIagb.a(obj_palette_32.c.o)
                                 0x14c (size before relaxing)
- .debug_str     0x00000769       0x1d .\libAPIagb.a(obj_tiles_32.c.o)
+ .debug_str     0x0000077f       0x1d .\libAPIagb.a(obj_tiles_32.c.o)
                                 0x16b (size before relaxing)
 
 .debug_loc      0x00000000      0x3db

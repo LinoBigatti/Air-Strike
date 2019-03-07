@@ -47,7 +47,7 @@ void update_gfx(void) {
 void load_gfx(void) {
 	obj_clear_all();
 	
-	bg_palette_32(bgPal, bgPalLen / 4, 0);
+	bg_palette_32(bgPal1, bgPal1Len / 4, 0);
 	bg_tileset_32(bgTiles, bgTilesLen / 4, 0, 8);
 	bg_map_32(bg0_1, bg0_1Len / 4, 30);
 	bg_map_32(bg1, bg1Len / 4, 31);

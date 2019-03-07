@@ -20,8 +20,10 @@
 #define bgTilesLen 2048
 extern const unsigned short bgTiles[1024];
 
-#define bgPalLen 512
-extern const unsigned short bgPal[256];
+#define bgPal1Len 512
+extern const unsigned short bgPal1[256];
+#define bgPal2Len 512
+extern const unsigned short bgPal2[256];
 
 #endif // GRIT_BG_H
 

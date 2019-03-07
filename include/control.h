@@ -3,10 +3,13 @@
 
 #include <object/obj_attribute_0.h>
 #include <object/obj_attribute_1.h>
+#include <background/bg_palette_32.h>
 #include <input.h>
 #include <IO.h>
 
 #include "var.h"
+
+#include "bg-tiles.h"
 
 extern void handle_input(void);
 

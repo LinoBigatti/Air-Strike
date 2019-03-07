@@ -7,6 +7,11 @@ void handle_input(void) {
 		g_playerState ^= 1;
 		g_playerVisibility ^= attr0_hide;
 		g_islandVisibility ^= attr0_hide;
+		if(g_playerState == 0) {
+			bg_palette_32(bgPal1, bgPal1Len / 4, 0);
+		} else {
+			bg_palette_32(bgPal2, bgPal2Len / 4, 0);
+		}
 	}
 	if(key_is_pressed(BUTTON_RIGHT)) {
 		if((g_playerX != 224) && g_playerState == 0) {
