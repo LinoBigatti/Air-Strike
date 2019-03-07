@@ -56,4 +56,11 @@ void handle_input(void) {
 		g_playerFlipH = 0;
 		g_playerFlipV = attr1_vflip;
 	}
+	if(key_start_pressing(BUTTON_A)) {
+		if((g_playerX >= g_islandXS && g_playerX <= g_islandXE) && (g_playerY >= g_islandYS && g_playerY <= g_islandYE)) {
+			g_island->attr0 = attr0_build(attr0_Y(g_islandYS), attr0_hide, attr0_normal, 0, attr0_4bpp, attr0_square);
+			IO_DISPCNT = 0;
+			while(1);
+		}
+	}
 }
