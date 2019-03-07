@@ -90,4 +90,5 @@ clean :
 	@rm -f $(OBJS)
 	@rm -f *.gba
 	@rm -f $(BUILD)/*.elf
+	@rm -f *.map
 	@echo Cleaned.
