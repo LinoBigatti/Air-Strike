@@ -32,10 +32,13 @@ Then [clone](https://help.github.com/en/articles/cloning-a-repository) [this rep
 
 Open **CygWin** and write:
 ```bash
-cd path/to/the/directory/with/the/source```
+cd path/to/the/directory/with/the/source
+```
 
 Then, run make:
-```make```
+```
+make
+```
 
 That's it!
 
@@ -45,18 +48,24 @@ That's it!
 First, install DevkitARM following [this guide](https://devkitpro.org/wiki/Getting_Started).
 GNU make is pre-installed in some distributions, and in others it isn't. So install it:
 ```bash
-sudo apt-get install build-essential```
+sudo apt-get install build-essential
+```
 Then clone this repository:
-```git clone https://github.com/linobigatti/Air-Strike```
+```
+git clone https://github.com/linobigatti/Air-Strike
+```
 
 #### Building the code
 
 Open the reminal and write:
 ```bash
-cd path/to/the/directory/with/the/source```
+cd path/to/the/directory/with/the/source
+```
 
 Then, run make:
-```make```
+```
+make
+```
 
 That's it!
 
