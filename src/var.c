@@ -17,13 +17,20 @@ u32 g_playerY = 0;
 u32 g_playerFlipH = 0;
 u32 g_playerFlipV = attr1_vflip;
 u32 g_playerAnimState = 0;
+u32 g_playerState = 0;
+u32 g_playerRadarX = 0;
+u32 g_playerRadarY = 0;
+u32 g_playerVisibility = 0;
 
 //Island variables
 u32 g_islandXS = 0;
 u32 g_islandYS = 0;
 u32 g_islandXE = 0;
 u32 g_islandYE = 0;
+u32 g_islandVisibility = attr0_hide;
 
 //Bg variables
 u32 g_screenX = 0;
 u32 g_screenY = 0;
+u32 g_radarScreenX = 0;
+u32 g_radarScreenY = 0;

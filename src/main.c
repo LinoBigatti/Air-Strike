@@ -1,4 +1,5 @@
 #include <basics/types.h>
+#include <basics/window.h>
 #include <input.h>
 
 #include "gfx.h"
@@ -11,8 +12,9 @@ int main(void) {
 		key_update();
 		update_timer();
 	}
-	g_islandXE = (g_islandXS = random_range(0, 240)) + 32;
-	g_islandYE = (g_islandYS = random_range(0, 128)) + 32;
+	
+	g_islandXE = (g_islandXS = random_range(0, 208)) + 32;
+	g_islandYE = (g_islandYS = random_range(0, 118)) + 32;
 	setup_gfx();
 	
 	while(1) {
