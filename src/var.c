@@ -3,6 +3,8 @@
 //Object pointers
 obj_attributes *g_player = &obj_reg_memory[0];
 obj_attributes *g_island = &obj_reg_memory[1];
+obj_attributes *g_radar = &obj_reg_memory[2];
+obj_attributes *g_radarWin = &obj_reg_memory[3];
 
 //Time registers
 u64 g_absoluteFrames = 0;

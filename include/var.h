@@ -9,6 +9,8 @@
 //Object pointers
 extern obj_attributes *g_player;
 extern obj_attributes *g_island;
+extern obj_attributes *g_radar;
+extern obj_attributes *g_radarWin;
 
 //Time registers
 extern u64 g_absoluteFrames;

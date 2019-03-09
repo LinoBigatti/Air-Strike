@@ -15,6 +15,7 @@
 #include "BG1.h"
 #include "player.h"
 #include "island.h"
+#include "radar.h"
 
 extern void update_gfx(void);
 extern void load_gfx(void);

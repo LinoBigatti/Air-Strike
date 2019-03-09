@@ -28,8 +28,10 @@ void update_gfx(void) {
 	//Move
 	g_player->attr0 = attr0_build(attr0_Y(g_playerY), g_playerVisibility, attr0_normal, 0, attr0_4bpp, attr0_square);
 	g_player->attr1 = attr1_regular_build(attr1_X(g_playerX), g_playerFlipH, g_playerFlipV, attr1_size(OBJ_16x16));
-	IO_WIN0H = win0h_right((32 * g_playerState) + (g_playerRadarX * g_playerState)) | win0h_left(g_playerRadarX * g_playerState);
-	IO_WIN0V = win0v_bottom((32 * g_playerState) + (g_playerRadarY * g_playerState)) | win0v_top(g_playerRadarY * g_playerState);
+	g_radar->attr0 = attr0_build(attr0_Y(g_playerRadarY), g_islandVisibility, attr0_normal, 0, attr0_4bpp, attr0_square);
+	g_radarWin->attr0 = attr0_build(attr0_Y(g_playerRadarY), g_islandVisibility, attr0_window, 0, attr0_4bpp, attr0_square);
+	g_radar->attr1	= attr1_regular_build(attr1_X(g_playerRadarX), 0, 0, attr1_size(OBJ_32x32));
+	g_radarWin->attr1 = attr1_regular_build(attr1_X(g_playerRadarX), 0, 0, attr1_size(OBJ_32x32));
 	
 	if(g_playerState == 0) {
 		g_island->attr0 = attr0_build(attr0_Y(g_islandYS_p), g_islandVisibility, attr0_normal, 0, attr0_4bpp, attr0_square);
@@ -57,6 +59,10 @@ void load_gfx(void) {
 	
 	obj_palette_32(islandPal, islandPalLen / 4, 1);
 	obj_tiles_32(islandTiles, islandTilesLen / 4, 4, 16, 4);
+	
+	obj_palette_32(radarPal, radarPalLen / 4, 2);
+	obj_tiles_32(radarTiles, radarTilesLen / 4, 4, 48, 4);
+	obj_tiles_32(radar_windowTiles, radar_windowTilesLen / 4, 4, 80, 4);
 }
 
 void load_gfx_IO(void) {
@@ -71,7 +77,13 @@ void load_gfx_IO(void) {
 	g_island->attr1 = attr1_regular_build(attr1_X(g_islandXS_p), 0, 0, attr1_size(OBJ_32x32));
 	g_island->attr2 = attr2_build(attr2_base_tile(16), attr2_priority(1), attr2_palbank(1));
 	
-	IO_DISPCNT = dispcnt_mode(0) | dispcnt_BG0 | dispcnt_BG1 | dispcnt_OBJ | dispcnt_obj_mapping_1D | dispcnt_WIN0;
-	IO_WININ = winin_win0(winin_win0BG0, 0, 0, 0, winout_winoutOBJ, 0);
-	IO_WINOUT = winout_winout(0, winout_winoutBG1, 0, 0, winout_winoutOBJ, 0);
+	g_radar->attr0 = attr0_build(attr0_Y(g_playerRadarY), g_islandVisibility, attr0_normal, 0, attr0_4bpp, attr0_square);
+	g_radar->attr1 = attr1_regular_build(attr1_X(g_playerRadarX), 0, 0, attr1_size(OBJ_32x32));
+	g_radar->attr2 = attr2_build(attr2_base_tile(48), attr2_priority(0), attr2_palbank(2));
+	
+	g_radarWin->attr0 = attr0_build(attr0_Y(g_playerRadarY), g_islandVisibility, attr0_window, 0, attr0_4bpp, attr0_square);
+	g_radarWin->attr1 = attr1_regular_build(attr1_X(g_playerRadarX), 0, 0, attr1_size(OBJ_32x32));
+	g_radarWin->attr2 = attr2_build(attr2_base_tile(80), attr2_priority(0), attr2_palbank(2));
+	IO_DISPCNT = dispcnt_mode(0) | dispcnt_BG0 | dispcnt_BG1 | dispcnt_OBJ | dispcnt_obj_mapping_1D | dispcnt_WINOBJ;
+	IO_WINOUT = winout_winout(0, winout_winoutBG1, 0, 0, winout_winoutOBJ, 0) | winout_winobj(winout_winobjBG0, 0, 0, 0, winout_winobjOBJ, 0);
 }

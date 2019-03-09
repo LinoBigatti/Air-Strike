@@ -52,8 +52,8 @@ extern const unsigned int radar_windowTiles[128];
 //======================================================================
 //
 //	radar, 16x16@4, 
-//	+ palette 6 entries, not compressed
-//	Total size: 12 = 12
+//	+ palette 16 entries, not compressed
+//	Total size: 32 = 32
 //
 //	Time-stamp: 2019-03-08, 23:44:58
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.13
@@ -64,8 +64,8 @@ extern const unsigned int radar_windowTiles[128];
 #ifndef GRIT_RADARPAL_H
 #define GRIT_RADARPAL_H
 
-#define radarPalLen 12
-extern const unsigned short radarPal[6];
+#define radarPalLen 32
+extern const unsigned short radarPal[16];
 
 #endif // GRIT_RADARPAL_H
 

@@ -7,6 +7,8 @@ void handle_input(void) {
 		g_playerState ^= 1;
 		g_playerVisibility ^= attr0_hide;
 		g_islandVisibility ^= attr0_hide;
+		g_radar->attr0 ^= attr0_hide;
+		g_radarWin->attr0 ^= attr0_hide;
 		if(g_playerState == 0) {
 			bg_palette_32(bgPal1, bgPal1Len / 4, 0);
 		} else {
@@ -23,7 +25,7 @@ void handle_input(void) {
 				g_islandXE_p -= 1;
 			}
 		}
-		if((g_playerRadarX != 208) && g_playerState == 1) {
+		if((g_playerRadarX != 224) && g_playerState == 1) {
 			g_playerRadarX += 1;
 			if(g_playerRadarX == 120 && g_radarScreenX != (256 - 240)) {
 				g_playerRadarX -= 1;
@@ -45,7 +47,7 @@ void handle_input(void) {
 				g_islandXE_p += 1;
 			}
 		}
-		if((g_playerRadarX != 0) && g_playerState == 1) {
+		if((g_playerRadarX != (0 - 16)) && g_playerState == 1) {
 			g_playerRadarX -= 1;
 			if(g_playerRadarX == 112 && g_radarScreenX != 0) {
 				g_playerRadarX += 1;
@@ -67,7 +69,7 @@ void handle_input(void) {
 				g_islandYE_p += 1;
 			}
 		}
-		if((g_playerRadarY != 0) && g_playerState == 1) {
+		if((g_playerRadarY != (0 - 16)) && g_playerState == 1) {
 			g_playerRadarY -= 1;
 			if(g_playerRadarY == 62 && g_radarScreenY != 0) {
 				g_playerRadarY += 1;
@@ -89,7 +91,7 @@ void handle_input(void) {
 				g_islandYE_p -= 1;
 			}
 		}
-		if((g_playerRadarY != 128) && g_playerState == 1) {
+		if((g_playerRadarY != 144) && g_playerState == 1) {
 			g_playerRadarY += 1;
 			if(g_playerRadarY == 80 && g_radarScreenY != (256 - 160)) {
 				g_playerRadarY -= 1;
