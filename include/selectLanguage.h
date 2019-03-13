@@ -3,6 +3,8 @@
 
 #include <basics/types.h>
 #include <basics/mem_regs.h>
+#include <save/save_8.h>
+#include <save/read_8.h>
 #include <IO.h>
 #include <background.h>
 #include <object.h>

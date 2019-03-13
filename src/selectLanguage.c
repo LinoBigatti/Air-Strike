@@ -1,9 +1,7 @@
 #include "selectLanguage.h"
 
-#define SAVE ((u8*)MEM_SAVE)
-
 void select_language(void) {
-	if(SAVE[0] == 0xFF) {
+	if(read_8(0) == 0xFF) {
 		char lenguage = 's';;
 		obj_clear_all();
 		obj_attributes *selection1 = &obj_reg_memory[0];
@@ -41,6 +39,6 @@ void select_language(void) {
 			}
 		}
 		
-		SAVE[0] = lenguage;
+		save_8(lenguage, 0);
 	}
 }
