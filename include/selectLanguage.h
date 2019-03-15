@@ -6,8 +6,9 @@
 #include <save/save_8.h>
 #include <save/read_8.h>
 #include <IO.h>
-#include <background.h>
+#include <background/bg_defs.h>
 #include <object.h>
+#include <DMA.h>
 #include <input.h>
 
 #include "time.h"

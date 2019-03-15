@@ -7,13 +7,13 @@ void select_language(void) {
 		obj_attributes *selection1 = &obj_reg_memory[0];
 		obj_attributes *selection2 = &obj_reg_memory[1];
 		
-		bg_palette_32(select_languagePal, select_languagePalLen / 4, 0);
-		bg_tileset_32(select_languageTiles, select_languageTilesLen / 4, 0, 8);
-		bg_map_32(select_languageMap, select_languageMapLen / 4, 31);
+		dma3_32(select_languagePal, bg_pal_memory, select_languagePalLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+		dma3_32(select_languageTiles, (u32*)&tile8_vram[0][0], select_languageTilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+		dma3_32(select_languageMap, (u32*)&se_memory[31][0], select_languageMapLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 		
-		obj_palette_32(selection1Pal, selection1PalLen / 4, 0);
-		obj_tiles_32(selection1Tiles, selection1TilesLen / 4, 4, 0, 4);
-		obj_tiles_32(selection2Tiles, selection2TilesLen / 4, 4, 32, 4);
+		dma3_32(selection1Pal, (u32*)&obj_pal_memory[0], selection1PalLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+		dma3_32(selection1Tiles, (u32*)&tile_vram[4][0], selection1TilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+		dma3_32(selection2Tiles, (u32*)&tile_vram[4][32], selection2TilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 		
 		selection1->attr0 = selection2->attr0 = attr0_build(attr0_Y(107), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_horizontal_rect);
 		selection1->attr1 = attr1_regular_build(attr1_X(10), 0, 0, attr1_size(OBJ_64x32));

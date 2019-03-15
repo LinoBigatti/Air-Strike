@@ -8,10 +8,10 @@ void update_gfx(void) {
 		past_seconds = g_seconds;
 		if(mapFrame == 1) {
 			mapFrame = 2;
-			bg_map_32(bg0_2, bg0_2Len / 4, 30);
+			dma3_32(bg0_2, (u32*)&se_memory[30][0], bg0_2Len / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 		} else {
 			mapFrame = 1;
-			bg_map_32(bg0_1, bg0_1Len / 4, 30);
+			dma3_32(bg0_1, (u32*)&se_memory[30][0], bg0_1Len / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 		}
 	}
 	
@@ -49,20 +49,20 @@ void update_gfx(void) {
 void load_gfx(void) {
 	obj_clear_all();
 	
-	bg_palette_32(bgPal1, bgPal1Len / 4, 0);
-	bg_tileset_32(bgTiles, bgTilesLen / 4, 0, 8);
-	bg_map_32(bg0_1, bg0_1Len / 4, 30);
-	bg_map_32(bg1, bg1Len / 4, 31);
+	dma3_32(bgPal1, bg_pal_memory, bgPal1Len / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+	dma3_32(bgTiles, (u32*)&tile8_vram[0][0], bgTilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+	dma3_32(bg0_1, (u32*)&se_memory[30][0], bg0_1Len / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+	dma3_32(bg1, (u32*)&se_memory[31][0], bg1Len / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 	
-	obj_palette_32(playerPal, playerPalLen / 4, 0);
-	obj_tiles_32(playerTiles, playerTilesLen / 4, 4, 0, 4);
+	dma3_32(playerPal, (u32*)&obj_pal_memory[0], playerPalLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+	dma3_32(playerTiles, (u32*)&tile_vram[4][0], playerTilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 	
-	obj_palette_32(islandPal, islandPalLen / 4, 1);
-	obj_tiles_32(islandTiles, islandTilesLen / 4, 4, 16, 4);
+	dma3_32(islandPal, (u32*)&obj_pal_memory[16], islandPalLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+	dma3_32(islandTiles, (u32*)&tile_vram[4][16], islandTilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 	
-	obj_palette_32(radarPal, radarPalLen / 4, 2);
-	obj_tiles_32(radarTiles, radarTilesLen / 4, 4, 48, 4);
-	obj_tiles_32(radar_windowTiles, radar_windowTilesLen / 4, 4, 80, 4);
+	dma3_32(radarPal, (u32*)&obj_pal_memory[32], radarPalLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+	dma3_32(radarTiles, (u32*)&tile_vram[4][48], radarTilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
+	dma3_32(radar_windowTiles, (u32*)&tile_vram[4][80], radar_windowTilesLen / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 }
 
 void load_gfx_IO(void) {

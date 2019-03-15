@@ -10,9 +10,9 @@ void handle_input(void) {
 		g_radar->attr0 ^= attr0_hide;
 		g_radarWin->attr0 ^= attr0_hide;
 		if(g_playerState == 0) {
-			bg_palette_32(bgPal1, bgPal1Len / 4, 0);
+			dma3_32(bgPal1, bg_pal_memory, bgPal1Len / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 		} else {
-			bg_palette_32(bgPal2, bgPal2Len / 4, 0);
+			dma3_32(bgPal2, bg_pal_memory, bgPal2Len / 4, dmacnt_incdst, dmacnt_incsrc, dmacnt_inmediate, 0);
 		}
 	}
 	if(key_is_pressed(BUTTON_RIGHT)) {
