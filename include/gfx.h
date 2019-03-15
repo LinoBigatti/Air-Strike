@@ -4,7 +4,7 @@
 #include <basics/types.h>
 #include <IO.h>
 #include <background/bg_defs.h>
-#include <object/obj_defs.h>
+#include <object.h>
 #include <DMA.h>
 
 #include "time.h"
