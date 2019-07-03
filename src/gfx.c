@@ -33,17 +33,10 @@ void update_gfx(void) {
 	g_radar->attr1	= attr1_regular_build(attr1_X(g_playerRadarX), 0, 0, attr1_size(OBJ_32x32));
 	g_radarWin->attr1 = attr1_regular_build(attr1_X(g_playerRadarX), 0, 0, attr1_size(OBJ_32x32));
 	
-	if(g_playerState == 0) {
-		g_island->attr0 = attr0_build(attr0_Y(g_islandYS_p), g_islandVisibility, attr0_normal, 0, attr0_4bpp, attr0_square);
-		g_island->attr1 = attr1_regular_build(attr1_X(g_islandXS_p), 0, 0, attr1_size(OBJ_32x32));
-		IO_BG0HOFS = IO_BG1HOFS = g_screenX;
-		IO_BG0VOFS = IO_BG1VOFS = g_screenY;
-	} else {
-		g_island->attr0 = attr0_build(attr0_Y(g_islandYS_r), g_islandVisibility, attr0_normal, 0, attr0_4bpp, attr0_square);
-		g_island->attr1 = attr1_regular_build(attr1_X(g_islandXS_r), 0, 0, attr1_size(OBJ_32x32));
-		IO_BG0HOFS = IO_BG1HOFS = g_radarScreenX;
-		IO_BG0VOFS = IO_BG1VOFS = g_radarScreenY;
-	}
+	g_island->attr0 = attr0_build(attr0_Y(g_islandYS_p), g_islandVisibility, attr0_normal, 0, attr0_4bpp, attr0_square);
+	g_island->attr1 = attr1_regular_build(attr1_X(g_islandXS_p), 0, 0, attr1_size(OBJ_32x32));
+	IO_BG0HOFS = IO_BG1HOFS = g_screenX;
+	IO_BG0VOFS = IO_BG1VOFS = g_screenY;
 }
 
 void load_gfx(void) {

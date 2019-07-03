@@ -27,12 +27,6 @@ void handle_input(void) {
 		}
 		if((g_playerRadarX != 224) && g_playerState == 1) {
 			g_playerRadarX += 1;
-			if(g_playerRadarX == 120 && g_radarScreenX != (256 - 240)) {
-				g_playerRadarX -= 1;
-				g_radarScreenX += 1;
-				g_islandXS_r -= 1;
-				g_islandXE_r -= 1;
-			}
 		}
 		g_playerAnimState = 8;
 		g_playerFlipH = 0;
@@ -49,12 +43,6 @@ void handle_input(void) {
 		}
 		if((g_playerRadarX != (0 - 16)) && g_playerState == 1) {
 			g_playerRadarX -= 1;
-			if(g_playerRadarX == 112 && g_radarScreenX != 0) {
-				g_playerRadarX += 1;
-				g_radarScreenX -= 1;
-				g_islandXS_r += 1;
-				g_islandXE_r += 1;
-			}
 		}
 		g_playerAnimState = 8;
 		g_playerFlipH = attr1_hflip;
@@ -71,12 +59,6 @@ void handle_input(void) {
 		}
 		if((g_playerRadarY != (0 - 16)) && g_playerState == 1) {
 			g_playerRadarY -= 1;
-			if(g_playerRadarY == 62 && g_radarScreenY != 0) {
-				g_playerRadarY += 1;
-				g_radarScreenY -= 1;
-				g_islandYS_r += 1;
-				g_islandYE_r += 1;
-			}
 		}
 		g_playerAnimState = 0;
 		g_playerFlipH = 0;
@@ -93,12 +75,6 @@ void handle_input(void) {
 		}
 		if((g_playerRadarY != 144) && g_playerState == 1) {
 			g_playerRadarY += 1;
-			if(g_playerRadarY == 80 && g_radarScreenY != (256 - 160)) {
-				g_playerRadarY -= 1;
-				g_radarScreenY += 1;
-				g_islandYS_r -= 1;
-				g_islandYE_r -= 1;
-			}
 		}
 		g_playerAnimState = 0;
 		g_playerFlipH = 0;
