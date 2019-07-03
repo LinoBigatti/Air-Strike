@@ -85,7 +85,7 @@ void handle_input(void) {
 			if((g_playerX >= g_islandXS_p && g_playerX <= g_islandXE_p) && (g_playerY >= g_islandYS_p && g_playerY <= g_islandYE_p)) {
 				g_island->attr0 = attr0_build(attr0_Y(g_islandYS_p), attr0_hide, attr0_normal, 0, attr0_4bpp, attr0_square);
 				IO_DISPCNT = 0;
-				while(1);
+				winScreen();
 			}
 		}
 	}

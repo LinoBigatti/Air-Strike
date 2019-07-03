@@ -35,16 +35,10 @@ extern u32 g_islandXS_p;
 extern u32 g_islandYS_p;
 extern u32 g_islandXE_p;
 extern u32 g_islandYE_p;
-extern u32 g_islandXS_r;
-extern u32 g_islandYS_r;
-extern u32 g_islandXE_r;
-extern u32 g_islandYE_r;
 extern u32 g_islandVisibility;
 
 //Bg variables
 extern u32 g_screenX;
 extern u32 g_screenY;
-extern u32 g_radarScreenX;
-extern u32 g_radarScreenY;
 
 #endif

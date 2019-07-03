@@ -9,6 +9,7 @@
 #include <IO.h>
 
 #include "var.h"
+#include "winScreen.h"
 
 #include "bg-tiles.h"
 
